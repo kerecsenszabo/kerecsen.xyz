@@ -14,122 +14,370 @@
       --text-main: #e5e7eb;
       --text-muted: #9ca3af;
       --border-subtle: rgba(148, 163, 184, 0.3);
+      --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
       color: var(--text-main);
-      line-height: 1.6; min-height: 100vh;
+      line-height: 1.6; 
+      min-height: 100vh;
     }
-    .wrapper { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    .wrapper { 
+      max-width: 1000px; 
+      margin: 0 auto; 
+      padding: 2.5rem 1.5rem; 
+    }
     header {
-      padding: 1.25rem 1.5rem; border-radius: 999px; border: 1px solid var(--border-subtle);
-      background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(16px);
-      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 2.5rem;
+      padding: 1.25rem 1.5rem; 
+      border-radius: 999px; 
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.8); 
+      backdrop-filter: blur(16px);
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      gap: 1.5rem; 
+      margin-bottom: 2.5rem;
+      transition: var(--transition);
+      position: sticky;
+      top: 1rem;
+      z-index: 100;
+    }
+    header:hover {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: rgba(148, 163, 184, 0.5);
     }
     .brand {
-      display: flex; align-items: center; gap: 0.85rem;
-      text-decoration: none; color: inherit;
+      display: flex; 
+      align-items: center; 
+      gap: 0.85rem;
+      text-decoration: none; 
+      color: inherit;
+      transition: var(--transition);
     }
-    .brand:hover .brand-title { color: #f9fafb; }
+    .brand:hover .brand-title { 
+      color: #f9fafb; 
+    }
     .brand:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 4px;
       border-radius: 999px;
     }
     .avatar {
-      width: 40px; height: 40px; border-radius: 999px;
+      width: 44px; 
+      height: 44px; 
+      border-radius: 999px;
       background: conic-gradient(from 220deg, #22c55e, #0ea5e9, #a855f7, #22c55e);
-      padding: 2px; display: flex; align-items: center; justify-content: center;
+      padding: 2px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .brand:hover .avatar {
+      transform: scale(1.05);
     }
     .avatar-inner {
-      width: 100%; height: 100%; border-radius: inherit; background: #020617;
-      display: flex; align-items: center; justify-content: center;
-      color: #e5e7eb; font-weight: 700; font-size: 1rem;
+      width: 100%; 
+      height: 100%; 
+      border-radius: inherit; 
+      background: #020617;
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      color: #e5e7eb; 
+      font-weight: 700; 
+      font-size: 1rem; 
     }
-    .brand-title { font-weight: 600; letter-spacing: 0.03em; font-size: 0.98rem; }
-    .brand-sub { font-size: 0.8rem; color: var(--text-muted); }
-    nav { display: flex; flex-wrap: wrap; gap: 0.75rem; font-size: 0.86rem; }
+    .brand-title { 
+      font-weight: 600; 
+      letter-spacing: 0.03em; 
+      font-size: 0.98rem; 
+    }
+    .brand-sub { 
+      font-size: 0.8rem; 
+      color: var(--text-muted); 
+    }
+    nav { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 0.75rem; 
+      font-size: 0.86rem; 
+    }
     nav a {
-      text-decoration: none; color: var(--text-muted); padding: 0.4rem 0.9rem;
-      border-radius: 999px; border: 1px solid transparent; transition: all 0.16s ease-out; background: rgba(15, 23, 42, 0.8);
+      text-decoration: none; 
+      color: var(--text-muted); 
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px; 
+      border: 1px solid transparent; 
+      transition: var(--transition); 
+      background: rgba(15, 23, 42, 0.8);
     }
     nav a:hover {
-      color: #f9fafb; border-color: var(--accent-soft); background: rgba(15, 23, 42, 1);
+      color: #f9fafb; 
+      border-color: var(--accent-soft); 
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-2px);
+    }
+    nav a:active {
+      transform: translateY(0);
     }
     main {
-      display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
-      gap: 2rem; align-items: start;
+      display: grid; 
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 2rem; 
+      align-items: start;
     }
     @media (max-width: 900px) {
-      main { grid-template-columns: minmax(0, 1fr); gap: 0; }
-      header { flex-direction: column; align-items: flex-start; border-radius: 1.25rem; }
-      nav { width: 100%; }
+      main { 
+        grid-template-columns: minmax(0, 1fr); 
+        gap: 1.5rem; 
+      }
+      header { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        border-radius: 1.25rem;
+        position: relative;
+        top: 0;
+      }
+      nav { 
+        width: 100%; 
+      }
     }
     .hero {
-      padding: 1.75rem;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), #020617);
-      border-radius: 1.5rem; border: 1px solid var(--border-subtle);
-      box-shadow: 0 18px 60px rgba(15, 23, 42, 0.7); margin-bottom: 1.75rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(15, 23, 42, 0.96));
+      border-radius: 1.5rem; 
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 60px rgba(15, 23, 42, 0.7);
+      margin-bottom: 1.75rem;
+      transition: var(--transition);
+    }
+    .hero:hover {
+      border-color: rgba(148, 163, 184, 0.5);
+      box-shadow: 0 25px 75px rgba(34, 197, 94, 0.1);
     }
     .pill {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.26rem 0.7rem; border-radius: 999px;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      color: var(--text-muted); font-size: 0.75rem; margin-bottom: 1rem;
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.4rem;
+      padding: 0.5rem 1rem; 
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: var(--accent); 
+      font-size: 0.8rem; 
+      margin-bottom: 1.25rem;
+      font-weight: 500;
     }
     .pill-dot {
-      width: 8px; height: 8px; border-radius: 999px; background: var(--accent);
+      width: 8px; 
+      height: 8px; 
+      border-radius: 999px; 
+      background: var(--accent);
       box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
-    h1 { font-size: clamp(2rem, 4vw, 2rem); letter-spacing: 0.02em; margin-bottom: 1rem; }
-    .hero-subtitle { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 1rem; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    h1 { 
+      font-size: clamp(2rem, 4vw, 2.5rem); 
+      letter-spacing: 0.02em; 
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #f9fafb, var(--text-main));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtitle { 
+      font-size: 1.1rem; 
+      color: var(--text-muted); 
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
     .hero-meta {
-      display: flex; flex-wrap: wrap; gap: 0.8rem; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 0.8rem; 
+      font-size: 0.85rem; 
+      color: var(--text-muted); 
+      margin-bottom: 1.25rem;
     }
     .hero-meta span {
-      padding: 0.18rem 0.6rem; border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.35); background: rgba(15, 23, 42, 0.9);
+      padding: 0.4rem 0.85rem; 
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle); 
+      background: rgba(34, 197, 94, 0.05);
+      transition: var(--transition);
     }
-    .hero-body { font-size: 0.96rem; color: var(--text-main); }
+    .hero-meta span:hover {
+      border-color: var(--accent);
+      background: rgba(34, 197, 94, 0.1);
+    }
+    .hero-body { 
+      font-size: 0.98rem; 
+      color: var(--text-main);
+      line-height: 1.8;
+    }
     .stack {
-      padding: 1.5rem; border-radius: 1.5rem; border: 1px solid var(--border-subtle); background: rgba(15, 23, 42, 0.92); margin-bottom: 1.75rem;
+      padding: 1.75rem; 
+      border-radius: 1.5rem; 
+      border: 1px solid var(--border-subtle); 
+      background: rgba(15, 23, 42, 0.92); 
+      margin-bottom: 1.75rem;
+      transition: var(--transition);
+    }
+    .stack:hover {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.98);
     }
     .section-title {
-      font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase;
-      letter-spacing: 0.14em; margin-bottom: 1rem;
+      font-size: 0.85rem; 
+      color: var(--text-muted); 
+      text-transform: uppercase;
+      letter-spacing: 0.15em; 
+      margin-bottom: 1.25rem;
+      font-weight: 600;
     }
-    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .chips { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 0.65rem; 
+    }
     .chip {
-      padding: 0.3rem 0.7rem; border-radius: 999px; border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 0.8rem; color: var(--text-main); background: rgba(15, 23, 42, 0.9);
+      padding: 0.4rem 0.85rem; 
+      border-radius: 999px; 
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      font-size: 0.8rem; 
+      color: var(--text-main); 
+      background: rgba(34, 197, 94, 0.08);
+      transition: var(--transition);
+    }
+    .chip:hover {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: var(--accent);
+      transform: translateY(-2px);
     }
     .sidebar-card {
-      padding: 1.5rem; border-radius: 1.4rem;
-      border: 1px solid var(--border-subtle); background: rgba(15, 23, 42, 0.96); margin-bottom: 1.75rem;
+      padding: 2rem; 
+      border-radius: 1.5rem;
+      border: 1px solid var(--border-subtle); 
+      background: rgba(15, 23, 42, 0.96); 
+      margin-bottom: 1.75rem;
+      transition: var(--transition);
     }
-    .sidebar-card h3 { font-size: 1rem; margin-bottom: 1rem; }
-    .muted { font-size: 0.88rem; color: var(--text-muted); }
+    .sidebar-card:hover {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.99);
+    }
+    .sidebar-card h3 { 
+      font-size: 1.05rem; 
+      margin-bottom: 1.25rem;
+      color: #f9fafb;
+    }
+    .muted { 
+      font-size: 0.88rem; 
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
     .timeline {
-      margin-top: 1rem; border-left: 1px solid rgba(55, 65, 81, 0.8); padding-left: 1rem;
+      margin-top: 1rem; 
+      border-left: 2px solid rgba(34, 197, 94, 0.3); 
+      padding-left: 1.5rem;
     }
-    .timeline-item { margin-bottom: 1rem; position: relative; }
+    .timeline-item { 
+      margin-bottom: 1.75rem; 
+      position: relative; 
+      transition: var(--transition);
+    }
+    .timeline-item:hover {
+      padding-left: 0.5rem;
+    }
     .timeline-item::before {
-      content: ""; position: absolute; left: calc(-1rem - 4.5px); top: 0.35rem;
-      width: 8px; height: 8px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+      content: ""; 
+      position: absolute; 
+      left: calc(-1.5rem - 6px); 
+      top: 0.25rem;
+      width: 12px; 
+      height: 12px; 
+      border-radius: 999px; 
+      background: var(--accent); 
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+      transition: var(--transition);
     }
-    .timeline-title { font-size: 0.92rem; font-weight: 500; }
-    .timeline-meta { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; }
-    .link-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+    .timeline-item:hover::before {
+      transform: scale(1.3);
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.2);
+    }
+    .timeline-title { 
+      font-size: 0.95rem; 
+      font-weight: 600;
+      color: #f9fafb;
+    }
+    .timeline-meta { 
+      font-size: 0.8rem; 
+      color: var(--text-muted); 
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .link-row { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 0.8rem; 
+      margin-top: 1.25rem; 
+    }
     .link-pill {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      padding: 0.35rem 0.8rem; border-radius: 999px; font-size: 0.82rem;
-      border: 1px solid rgba(148, 163, 184, 0.5); background: rgba(15, 23, 42, 0.9); color: var(--text-main); text-decoration: none;
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.4rem;
+      padding: 0.5rem 1rem; 
+      border-radius: 999px; 
+      font-size: 0.82rem;
+      border: 1px solid rgba(148, 163, 184, 0.5); 
+      background: rgba(34, 197, 94, 0.1); 
+      color: var(--text-main); 
+      text-decoration: none;
+      transition: var(--transition);
+      font-weight: 500;
     }
-    .link-pill span.icon { font-size: 0.9rem; opacity: 0.7; }
-    footer { margin-top: 2.5rem; font-size: 0.78rem; color: var(--text-muted); text-align: center; }
+    .link-pill:hover {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .link-pill span.icon { 
+      font-size: 1rem; 
+      opacity: 0.8; 
+    }
+    footer { 
+      margin-top: 3rem; 
+      font-size: 0.78rem; 
+      color: var(--text-muted); 
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.2);
+    }
+    ul {
+      list-style: none;
+    }
+    ul li {
+      margin-bottom: 0.65rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -158,31 +406,31 @@
         <section class="hero" id="about">
           <div class="pill">
             <span class="pill-dot"></span>
-             Available for interesting ML / Data Engineering work
+            Available for interesting ML / Data Engineering work
           </div>
           <h1>Machine Learning Engineer</h1>
           <p class="hero-subtitle">
-            Machine Learning Engineer with 8+ years of experience spanning software development and advanced ML roles.
+            Transforming data into intelligence with 8+ years of experience spanning software development and advanced ML roles.
           </p>
           <div class="hero-meta">
             <span>ML · MLOps · Data Engineering · AI Innovation</span>
           </div>
           <p class="hero-body">
-            I specialize in data engineering, machine learning algorithms, and data architecture.
-            Currently, I am driving AI innovation at The Estée Lauder Companies, building scalable ML pipelines and deploying production-grade systems with Databricks and modern ML tooling. Previously, I worked in both ML and software engineering roles in large international organizations and startups.<br><br>
-            Published research and a passion for community engagement.
+            I specialize in data engineering, machine learning algorithms, and scalable data architecture. Currently driving AI innovation at The Estée Lauder Companies, building production-grade ML pipelines and deploying enterprise systems with Databricks and modern ML tooling. Background in robotics and embedded systems, now focused on leveraging data science to solve real-world business problems. Published research and a passion for community engagement and knowledge sharing.
           </p>
         </section>
 
         <section class="stack">
           <div class="section-title">Key skills & tools</div>
           <div class="chips">
-            <div class="chip">Data Architecture · Data Engineering</div>
+            <div class="chip">Data Architecture & Engineering</div>
             <div class="chip">Machine Learning Engineering</div>
-            <div class="chip">Databricks · Apache Spark</div>
-            <div class="chip">Python · PyTorch · scikit-learn</div>
-            <div class="chip">Git · Code Review</div>
-            <div class="chip">C++ · C</div>
+            <div class="chip">Databricks & Apache Spark</div>
+            <div class="chip">Python & PyTorch</div>
+            <div class="chip">scikit-learn & XGBoost</div>
+            <div class="chip">Git & Code Review</div>
+            <div class="chip">C++ & C</div>
+            <div class="chip">MLOps & DevOps</div>
           </div>
         </section>
 
@@ -197,19 +445,19 @@
 
         <section class="sidebar-card" id="projects">
           <h3>Selected projects & achievements</h3>
-          <ul class="muted" style="margin-left:1rem; margin-top:1rem;">
-            <li>Publication: <em>Evaluating the Socioeconomic Status of a Large Social Event Attendees</em> (IEEE, Oct 2022)</li>
-            <li>Featured projects and publications in ML/data engineering</li>
-            <li>Ultrabalaton endurance running challenge 2025</li>
-            <li>Wizzair Budapest Half Marathon 2024</li>
-            <li>Community engagement: events, mentoring, and collaboration</li>
+          <ul class="muted">
+            <li><strong>IEEE Publication</strong>: "Evaluating the Socioeconomic Status of a Large Social Event Attendees" (October 2022) – Research on ML-driven socioeconomic inference</li>
+            <li><strong>ML Systems</strong>: Built scalable ML pipelines processing millions of data points on Databricks and Spark</li>
+            <li><strong>Ultrabalaton Challenge 2025</strong>: Completed 173.6 km endurance running challenge in 24 hours</li>
+            <li><strong>Wizzair Budapest Half Marathon 2024</strong>: Competed in competitive running event</li>
+            <li><strong>Community</strong>: Active in mentoring, knowledge sharing, and tech community events</li>
           </ul>
         </section>
 
         <section class="sidebar-card" id="contact">
           <h3>Contact & links</h3>
           <p class="muted">
-            Best way to reach me is by email or LinkedIn. I’m happy to talk about ML, data platforms, or the best spots around Budapest.
+            Best way to reach me is by email or LinkedIn. I'm happy to discuss ML, data platforms, architecture, or the best spots around Budapest. Let's connect!
           </p>
           <div class="link-row">
             <a class="link-pill" href="mailto:mail@kerecsen.xyz">
@@ -220,22 +468,21 @@
               <span class="icon">💻</span>
               <span>GitHub</span>
             </a>
+            <a class="link-pill" href="https://www.linkedin.com/in/kerecsenszabo/" target="_blank" rel="noopener noreferrer">
+              <span class="icon">🔗</span>
+              <span>LinkedIn</span>
+            </a>
             <a class="link-pill" href="https://www.strava.com/athletes/120392908" target="_blank" rel="noopener noreferrer">
               <span class="icon">🏃</span>
               <span>Strava</span>
-            </a>
-            <a class="link-pill" href="https://www.linkedin.com/in/kerecsen-szabo" target="_blank" rel="noopener noreferrer">
-              <span class="icon">🔗</span>
-              <span>LinkedIn</span>
             </a>
           </div>
         </section>
 
         <section class="sidebar-card" id="privacy">
-          <h3>Privacy</h3>
+          <h3>Privacy & Security</h3>
           <p class="muted">
-            This site does not use cookies, analytics, tracking pixels, or browser storage.
-            The only information you share is what you explicitly send through email or third-party links.
+            This site is designed with privacy in mind. No cookies, analytics, tracking pixels, or browser storage. The only information shared is what you explicitly send via email or third-party links. All data is yours to control.
           </p>
         </section>
         
@@ -249,25 +496,26 @@
 
             <div class="timeline-item">
               <div class="timeline-title">Machine Learning Engineer</div>
-              <div class="timeline-meta">The Estée Lauder Companies<br>Nov 2025 – Present</div>
-              <div class="muted">Driving AI innovation, building scalable ML pipelines and production-grade systems using Databricks. Focus: time series forecasting.</div>
+              <div class="timeline-meta">The Estée Lauder Companies · Nov 2025 – Present</div>
+              <div class="muted">Driving AI innovation and building scalable ML pipelines. Deploying production-grade time series forecasting systems using Databricks and Apache Spark. Focus on MLOps, data quality, and model performance optimization.</div>
             </div>
 
             <div class="timeline-item">
               <div class="timeline-title">Machine Learning Engineer</div>
-              <div class="timeline-meta">EPAM Systems<br>Feb 2023 – Oct 2025</div>
-              <div class="muted">ML pipelines and analytics on Databricks and Spark, building reusable systems.</div>
+              <div class="timeline-meta">EPAM Systems · Feb 2023 – Oct 2025</div>
+              <div class="muted">Designed and implemented ML pipelines and analytics solutions on Databricks and Apache Spark. Built reusable, production-ready systems for data processing and model inference. Collaborated with cross-functional teams on data architecture.</div>
             </div>
             
             <div class="timeline-item">
               <div class="timeline-title">Software Engineer</div>
-              <div class="timeline-meta">Drem Innovation and Consulting<br>Jul 2018 – Jan 2023</div>
-              <div class="muted">Building C++-based systems, robust software engineering for real-world usage.</div>
+              <div class="timeline-meta">Drem Innovation and Consulting · Jul 2018 – Jan 2023</div>
+              <div class="muted">Built robust C++-based systems for real-world applications. Developed embedded systems and performance-critical components. Contributed to software architecture and code quality initiatives.</div>
             </div>
+
             <div class="timeline-item">
               <div class="timeline-title">Junior Software Engineer</div>
-              <div class="timeline-meta">Drem Innovation and Consulting<br>May 2017 – Jun 2018</div>
-              <div class="muted">Part-time, C++ and C systems, expanding professional skill set.</div>
+              <div class="timeline-meta">Drem Innovation and Consulting · May 2017 – Jun 2018</div>
+              <div class="muted">Part-time role developing C++ and C systems. Expanded professional skill set in software development, systems programming, and team collaboration.</div>
             </div>
           </div>
         </section>
@@ -277,22 +525,22 @@
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-title">MSc. Computer Engineering</div>
-              <div class="timeline-meta">Óbuda University<br>2020 – 2022</div>
-              <div class="muted">Data Science · Distributed Systems · Bioinformatics</div>
+              <div class="timeline-meta">Óbuda University · 2020 – 2022</div>
+              <div class="muted">Focus: Data Science · Distributed Systems · Bioinformatics. Specialized in machine learning applications and large-scale data processing.</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-title">BSc. Mechatronics Engineering</div>
-              <div class="timeline-meta">Óbuda University<br>2014 – 2018</div>
-              <div class="muted">Embedded Systems · Robotics · Control Engineering</div>
+              <div class="timeline-meta">Óbuda University · 2014 – 2018</div>
+              <div class="muted">Focus: Embedded Systems · Robotics · Control Engineering. Strong foundation in systems design and real-time computing.</div>
             </div>
           </div>
         </section>
 
         <section class="sidebar-card" id="certs">
-          <h3>Certifications</h3>
-          <ul class="muted" style="margin-left:1rem; margin-top:1rem;">
-            <li>Databricks Certified Associate Developer for Apache Spark</li>
-            <li>EngX Learning Journey Program: SW Development, Secure Coding, Code Review</li>
+          <h3>Certifications & Training</h3>
+          <ul class="muted">
+            <li><strong>Databricks Certified Associate Developer</strong> – Apache Spark expertise and best practices</li>
+            <li><strong>EngX Learning Journey Program</strong> – Software Development, Secure Coding, and Code Review fundamentals</li>
           </ul>
         </section>
 
@@ -300,7 +548,7 @@
     </main>
 
     <footer>
-      © <span id="year"></span> Kerecsen Szabó · kerecsen.xyz
+      © <span id="year"></span> Kerecsen Szabó · kerecsen.xyz · Crafted with care
     </footer>
   </div>
   <script>
