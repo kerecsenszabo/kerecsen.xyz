@@ -1,0 +1,120 @@
+{
+  "name": "Kerecsen Szabó",
+  "email": "kerecsen.szabo@gmail.com",
+  "phone": "+36303453195",
+  "location": "Budapest, Hungary",
+  "links": ["https://www.linkedin.com/in/kerecsenszabo"],
+  "languages": [
+    {"name": "English", "proficiency": "Native"},
+    {"name": "Hungarian", "proficiency": "Native"},
+    {"name": "German", "proficiency": "Basic"}
+  ],
+  "summary": "I turn complex business needs into reliable, scalable ML products, combining software engineering depth with production ML and data platform experience. Across 9+ years in software, data and machine learning, I have built forecasting platforms, real-time model-serving systems and distributed data pipelines, working with stakeholders from requirements through deployment and production support. I prioritize clean, performant code and use AI tools to accelerate delivery while reviewing and verifying their output.",
+  "skills": [
+    "Production ML Systems",
+    "ML Platform Architecture",
+    "Business Requirements to Production Solutions",
+    "Stakeholder Collaboration",
+    "Scalable Software Design",
+    "Spark Performance Optimization",
+    "MLOps and ML Lifecycle",
+    "Distributed Data Engineering",
+    "Batch and Real-Time Model Serving",
+    "Demand forecasting",
+    "Python",
+    "Git",
+    "NumPy",
+    "pandas",
+    "Apache Spark",
+    "PySpark",
+    "Databricks",
+    "Azure",
+    "MLflow",
+    "scikit-learn",
+    "XGBoost",
+    "BentoML",
+    "Apache Airflow",
+    "GitHub Actions",
+    "Docker",
+    "Kubernetes",
+    "Infrastructure as Code"
+  ],
+  "ai_native": [
+    "Use AI tools to boost productivity in drafting and proofreading documentation, rewriting text and generating code; inspect and verify all AI-generated output before use.",
+    "Use GitHub Copilot for code generation, pull-request review and conversational exploration of codebases, with human review of suggested changes.",
+    "Apply advanced prompt engineering and stay current with new AI models and their capabilities.",
+    "Build reproducible benchmarks for local LLMs across model families and sizes, evaluating structured-output reliability, relevance, grounding, latency and resource use to select models for production workflows.",
+    "Use AI credits responsibly, optimizing prompts and workflows to minimize credit consumption without compromising quality or human verification.",
+    "Understand LLM and RAG pipeline concepts; have built RAG pipelines using Hugging Face, Ollama, LangChain and ChromaDB."
+  ],
+  "experience": [
+    {
+      "company": "The Estée Lauder Companies Inc.",
+      "role": "Machine Learning Engineer",
+      "dates": "November 2025 - Present",
+      "bullets": [
+        "Building a global ML platform for sales forecasting at the lowest level of granularity, using Python and PySpark (Apache Spark) on Azure Databricks. Develop forecasting workflows that apply market-specific rule sets within a common global solution.",
+        "Responsible for China market-specific forecasting requirements while building reusable capabilities for the global platform. Partner with planning, supply-chain and commercial stakeholders to translate market needs into production workflows.",
+        "Use Databricks notebooks, pipelines, jobs, Unity Catalog and compute to develop and run forecasting workflows; work with Delta Lake on Databricks and SQL Server on Azure.",
+        "Track the ML lifecycle in MLflow, from experiments through production use.",
+        "Work with scikit-learn and XGBoost models in production.",
+        "Run performance tests and tune Spark workloads and resource allocation to improve scalability and production reliability.",
+        "Serve as a GitHub code owner, perform final pull-request reviews and approvals, and coordinate monthly code releases."
+      ]
+    },
+    {
+      "company": "EPAM Systems Inc.",
+      "role": "Machine Learning Engineer",
+      "dates": "February 2023 - October 2025",
+      "bullets": [
+        "Delivered ML and data-engineering work for multinational clients in agile teams, across rapid prototyping, production model serving and cloud data migration.",
+        "Rapidly prototyped an MVP for forecasting global vaccine needs using available data during a one-month project, for presentation to the client.",
+        "Developed live API-based recommender models and connected batch inference services over two years; iterated on models and feature engineering with MLflow lifecycle and experiment tracking.",
+        "Used Apache Airflow to schedule batch model inference and data pipelines.",
+        "Used GitHub Actions for ML CI/CD, including model training and deployment.",
+        "Deployed API-based and batch inference model services using BentoML and Docker containers, running on Kubernetes with infrastructure-as-code-based configuration.",
+        "Built live feature-engineering pipelines using Spark Streaming and Kafka; worked primarily in Python with some Scala.",
+        "Supported production services to meet SLOs and SLAs, benchmarked live model serving, and performance-tested and tuned Spark workloads and resource allocation.",
+        "Tracked A/B experiments and introduced model upgrades gradually.",
+        "Migrated data pipelines from legacy on-premises systems to the cloud during a six-month project; performed data and feature engineering in Python and used SQL Server DDL and DML for database management."
+      ]
+    },
+    {
+      "company": "Drem Innovation and Consulting Ltd.",
+      "role": "Software Engineer",
+      "dates": "July 2018 - January 2023",
+      "bullets": [
+        "Developed embedded microprocessor software in C and PC applications in C++ for projects across different domains within a startup incubator.",
+        "Built time-critical actuator-control and server-based data-collection solutions, along with data storage and visualization tools.",
+        "Supported startups end to end, working on complete hardware and software solutions from PCB design through PC applications. Collaborated with founders and domain experts to turn early-stage ideas into working products.",
+        "Progressed from Junior Software Engineer to Software Engineer with increasing responsibility for architecture, implementation and delivery."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Óbuda University",
+      "degree": "Master of Science (MSc), Computer Engineering",
+      "dates": "2020 - 2022"
+    },
+    {
+      "institution": "Óbuda University",
+      "degree": "Bachelor of Science (BSc), Mechatronics Engineering",
+      "dates": "2014 - 2018"
+    }
+  ],
+  "publications": [
+    {
+      "title": "Evaluating the Socioeconomic Status of a Large Social Event Attendees",
+      "date": "25 October 2022",
+      "publisher": "IEEE",
+      "doi": "10.1109/SACI55618.2022.9919469"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Databricks Certified Associate Developer for Apache Spark 3.0",
+      "issuer": "Databricks"
+    }
+  ]
+}
