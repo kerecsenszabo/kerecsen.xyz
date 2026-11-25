@@ -1,15 +1,17 @@
 {
   "name": "Kerecsen Szabó",
   "email": "kerecsen.szabo@gmail.com",
-  "phone": "+36303453195",
+  "phone": "+36 30 345 3195",
   "location": "Budapest, Hungary",
-  "links": ["https://www.linkedin.com/in/kerecsenszabo"],
-  "languages": [
-    {"name": "English", "proficiency": "Native"},
-    {"name": "Hungarian", "proficiency": "Native"},
-    {"name": "German", "proficiency": "Basic"}
+  "links": [
+    "https://linkedin.com/in/kerecsenszabo",
+    "https://github.com/kerecsenszabo"
   ],
-  "summary": "I turn complex business needs into reliable, scalable ML products, combining software engineering depth with production ML and data platform experience. Across 9+ years in software, data and machine learning, I have built forecasting platforms, real-time model-serving systems and distributed data pipelines, working with stakeholders from requirements through deployment and production support. I prioritize clean, performant code and use AI tools to accelerate delivery while reviewing and verifying their output.",
+  "summary": [
+    "I turn complex business needs into reliable, scalable ML products, combining Python software engineering depth with production ML and data platform experience.",
+    "Across 8+ years in software, data and machine learning, I have built forecasting and RAG-enabled applications, real-time model-serving systems and distributed data pipelines, working with stakeholders from requirements through deployment, testing and production support.",
+    "I apply test-driven development and clean-code practices to build cloud-native applications optimised for distributed computing."
+  ],
   "skills": [
     "Production ML Systems",
     "ML Platform Architecture",
@@ -22,11 +24,11 @@
     "Batch and Real-Time Model Serving",
     "Demand forecasting",
     "Python",
-    "Git",
-    "NumPy",
-    "pandas",
-    "Apache Spark",
+    "SQL",
+    "dbt",
+    "Data Transformation and Validation",
     "PySpark",
+    "Git",
     "Databricks",
     "Azure",
     "MLflow",
@@ -36,8 +38,19 @@
     "Apache Airflow",
     "GitHub Actions",
     "Docker",
+    "Linux",
     "Kubernetes",
-    "Infrastructure as Code"
+    "Infrastructure as Code",
+    "API Services",
+    "Datadog",
+    "Logging and Monitoring",
+    "Error Handling",
+    "Health Checks",
+    "pytest",
+    "Test-Driven Development",
+    "Production Incident Response",
+    "Technical Leadership",
+    "Consulting"
   ],
   "ai_native": [
     "Use AI tools to boost productivity in drafting and proofreading documentation, rewriting text and generating code; inspect and verify all AI-generated output before use.",
@@ -51,15 +64,28 @@
     {
       "company": "The Estée Lauder Companies Inc.",
       "role": "Machine Learning Engineer",
-      "dates": "November 2025 - Present",
+      "dates": "November 2025 - October 2026",
       "bullets": [
-        "Building a global ML platform for sales forecasting at the lowest level of granularity, using Python and PySpark (Apache Spark) on Azure Databricks. Develop forecasting workflows that apply market-specific rule sets within a common global solution.",
-        "Responsible for China market-specific forecasting requirements while building reusable capabilities for the global platform. Partner with planning, supply-chain and commercial stakeholders to translate market needs into production workflows.",
-        "Use Databricks notebooks, pipelines, jobs, Unity Catalog and compute to develop and run forecasting workflows; work with Delta Lake on Databricks and SQL Server on Azure.",
-        "Track the ML lifecycle in MLflow, from experiments through production use.",
-        "Work with scikit-learn and XGBoost models in production.",
-        "Run performance tests and tune Spark workloads and resource allocation to improve scalability and production reliability.",
-        "Serve as a GitHub code owner, perform final pull-request reviews and approvals, and coordinate monthly code releases."
+        "Built an internal RAG assistant over Confluence documentation for a global sales forecasting platform.",
+        "Extended the RAG assistant to retrieve forecast and sales-history data and answer questions from stakeholders and regional sales planners.",
+        "Enabled chatbot users to read, add and modify local rule sets, overrides and custom sales logic to enhance forecasts.",
+        "Built a global sales forecasting platform at the lowest level of granularity using Python and PySpark on Azure Databricks.",
+        "Developed advanced SQL transformations and validation logic using joins, window functions, DDL and DML.",
+        "Owned market-specific forecasting requirements across regional markets.",
+        "Built reusable forecasting capabilities for the global platform from market-specific requirements.",
+        "Partnered with planning, supply-chain and commercial stakeholders to translate market needs into production workflows.",
+        "Wrote automated unit tests for forecasting workflows with pytest.",
+        "Applied test-driven development and clean-code practices across forecasting workflows.",
+        "Supported live production services across application, data, integration and model layers.",
+        "Diagnosed production incidents across application, data, integration and model layers.",
+        "Led design and architecture reviews for forecasting workflows.",
+        "Mentored engineers across forecasting workflows.",
+        "Drove incremental technical-debt reduction through documentation, code reviews and clean-code improvements.",
+        "Served as a GitHub code owner for final pull-request reviews and approvals.",
+        "Coordinated monthly code releases across the forecasting platform.",
+        "Tracked model experiments, lineage and production use through MLflow.",
+        "Developed and supported scikit-learn and XGBoost forecasting models in production.",
+        "Tuned Spark workloads and resource allocation to improve scalability and production reliability."
       ]
     },
     {
@@ -67,16 +93,34 @@
       "role": "Machine Learning Engineer",
       "dates": "February 2023 - October 2025",
       "bullets": [
-        "Delivered ML and data-engineering work for multinational clients in agile teams, across rapid prototyping, production model serving and cloud data migration.",
-        "Rapidly prototyped an MVP for forecasting global vaccine needs using available data during a one-month project, for presentation to the client.",
-        "Developed live API-based recommender models and connected batch inference services over two years; iterated on models and feature engineering with MLflow lifecycle and experiment tracking.",
-        "Used Apache Airflow to schedule batch model inference and data pipelines.",
-        "Used GitHub Actions for ML CI/CD, including model training and deployment.",
-        "Deployed API-based and batch inference model services using BentoML and Docker containers, running on Kubernetes with infrastructure-as-code-based configuration.",
-        "Built live feature-engineering pipelines using Spark Streaming and Kafka; worked primarily in Python with some Scala.",
-        "Supported production services to meet SLOs and SLAs, benchmarked live model serving, and performance-tested and tuned Spark workloads and resource allocation.",
-        "Tracked A/B experiments and introduced model upgrades gradually.",
-        "Migrated data pipelines from legacy on-premises systems to the cloud during a six-month project; performed data and feature engineering in Python and used SQL Server DDL and DML for database management."
+        "Delivered ML and data-engineering work for multinational clients in agile teams.",
+        "Rapidly prototyped an MVP for forecasting global vaccine needs using available data during a one-month project.",
+        "Presented the vaccine-demand forecasting MVP to the client.",
+        "Developed live API-based recommender models.",
+        "Operated live API-based recommender models for two years.",
+        "Built batch inference services supporting the recommender models.",
+        "Iterated on recommender models using experiment tracking in MLflow.",
+        "Iterated on feature engineering for recommender models using experiment tracking in MLflow.",
+        "Wrote automated unit tests for ML and data services with pytest.",
+        "Applied test-driven development and clean-code practices across ML and data services.",
+        "Scheduled batch model inference and data pipelines with Apache Airflow.",
+        "Built GitHub Actions workflows to automate model training and deployment.",
+        "Deployed API-based and batch inference model services using BentoML and Docker containers on Kubernetes.",
+        "Configured model-serving infrastructure using infrastructure-as-code practices.",
+        "Operated live model services with logging and monitoring in Datadog.",
+        "Implemented retries, timeouts, error handling and health checks for live model services.",
+        "Built live feature-engineering pipelines using Spark Streaming and Kafka.",
+        "Worked primarily in Python with some Scala.",
+        "Supported production services to meet SLOs and SLAs.",
+        "Diagnosed incidents across application, data, integration and model layers.",
+        "Benchmarked live model serving to assess performance and production readiness.",
+        "Performance-tested Spark workloads.",
+        "Tuned Spark workloads and resource allocation for production performance.",
+        "Tracked A/B experiments for model upgrades.",
+        "Introduced model upgrades gradually to manage deployment risk.",
+        "Migrated legacy on-premises data pipelines to cloud services during a six-month project.",
+        "Performed data and feature engineering in Python for the cloud migration.",
+        "Used SQL Server DDL and DML for database management during the cloud migration."
       ]
     },
     {
@@ -84,9 +128,13 @@
       "role": "Software Engineer",
       "dates": "July 2018 - January 2023",
       "bullets": [
-        "Developed embedded microprocessor software in C and PC applications in C++ for projects across different domains within a startup incubator.",
-        "Built time-critical actuator-control and server-based data-collection solutions, along with data storage and visualization tools.",
-        "Supported startups end to end, working on complete hardware and software solutions from PCB design through PC applications. Collaborated with founders and domain experts to turn early-stage ideas into working products.",
+        "Developed embedded microprocessor software in C within a startup incubator.",
+        "Built PC applications in C++ for projects across multiple domains.",
+        "Built time-critical actuator-control systems.",
+        "Built server-based data-collection services.",
+        "Built data-storage and data-visualization tools.",
+        "Supported startups end to end across complete hardware and software solutions, from PCB design through PC applications.",
+        "Collaborated with founders and domain experts to turn early-stage ideas into working products.",
         "Progressed from Junior Software Engineer to Software Engineer with increasing responsibility for architecture, implementation and delivery."
       ]
     }
@@ -115,6 +163,20 @@
     {
       "name": "Databricks Certified Associate Developer for Apache Spark 3.0",
       "issuer": "Databricks"
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "proficiency": "Fluent"
+    },
+    {
+      "name": "Hungarian",
+      "proficiency": "Native"
+    },
+    {
+      "name": "German",
+      "proficiency": "Basic"
     }
   ]
 }
